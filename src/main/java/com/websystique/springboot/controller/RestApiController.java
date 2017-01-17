@@ -68,6 +68,7 @@ public class RestApiController {
         userService.saveUser(user);
 
         HttpHeaders headers = new HttpHeaders();
+        headers.setAccessControlAllowCredentials(true);
         headers.setLocation(ucBuilder.path("/api/user/{id}").buildAndExpand(user.getId()).toUri());
         return new ResponseEntity<String>(headers, HttpStatus.CREATED);
     }
