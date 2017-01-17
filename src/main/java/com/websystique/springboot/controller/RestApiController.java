@@ -17,7 +17,7 @@ import com.websystique.springboot.util.CustomErrorType;
 
 
 
-@CrossOrigin(origins = "https://evening-lake-666274.herokuapp.com")
+@CrossOrigin(origins = "https://evening-lake-666274.herokuapp.com/SpringBootCRUDApp/")
 @RestController
 @RequestMapping("/api")
 public class RestApiController {
@@ -55,7 +55,6 @@ public class RestApiController {
 
     // -------------------Create a User-------------------------------------------
 
-    @CrossOrigin(origins = "https://evening-lake-666274.herokuapp.com/SpringBootCRUDApp/api/user/")
     @RequestMapping(value = "/user/", method = RequestMethod.POST)
     public ResponseEntity<?> createUser(@RequestBody User user, UriComponentsBuilder ucBuilder) {
         logger.info("Creating User : {}", user);
