@@ -1,8 +1,20 @@
 var app = angular.module('crudApp',['ui.router','ngStorage']);
 
 app.constant('urls', {
+
+
+    //for online usage
+
+    BASE: 'https://tranquil-hollows-50593.herokuapp.com/SpringBootCRUDApp',
+    USER_SERVICE_API : 'https://tranquil-hollows-50593.herokuapp.com/SpringBootCRUDApp/api/user/'
+
+
+
+    //for local usage
+    /*
     BASE: 'http://localhost:8080/SpringBootCRUDApp',
     USER_SERVICE_API : 'http://localhost:8080/SpringBootCRUDApp/api/user/'
+    */
 });
 
 app.config(['$stateProvider', '$urlRouterProvider',
