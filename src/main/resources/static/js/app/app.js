@@ -5,8 +5,8 @@ app.constant('urls', {
 
     //for online usage
 
-    BASE: 'https://tranquil-hollows-50593.herokuapp.com/SpringBootCRUDApp',
-    USER_SERVICE_API : 'https://tranquil-hollows-50593.herokuapp.com/SpringBootCRUDApp/api/user/'
+    BASE: 'https://evening-lake-666274.herokuapp.com/SpringBootCRUDApp',
+    USER_SERVICE_API : 'https://evening-lake-666274.herokuapp.com/SpringBootCRUDApp/api/user/'
 
 
 
