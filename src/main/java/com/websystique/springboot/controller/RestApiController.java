@@ -17,7 +17,7 @@ import com.websystique.springboot.util.CustomErrorType;
 
 
 
-@CrossOrigin(origins = "https://evening-lake-666274.herokuapp.com/SpringBootCRUDApp/")
+//@CrossOrigin(origins = "https://evening-lake-666274.herokuapp.com/SpringBootCRUDApp/")
 @RestController
 @RequestMapping("/api")
 public class RestApiController {
