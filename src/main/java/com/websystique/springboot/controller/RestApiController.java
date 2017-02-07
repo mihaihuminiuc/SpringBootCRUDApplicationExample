@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import com.websystique.springboot.model.User;
-import com.websystique.springboot.service.UserService;
+import com.websystique.springboot.service.userData.UserService;
 import com.websystique.springboot.util.CustomErrorType;
 
 

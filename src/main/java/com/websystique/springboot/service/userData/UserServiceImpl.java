@@ -1,4 +1,4 @@
-package com.websystique.springboot.service;
+package com.websystique.springboot.service.userData;
 
 import com.websystique.springboot.model.User;
 import com.websystique.springboot.repositories.UserRepository;
