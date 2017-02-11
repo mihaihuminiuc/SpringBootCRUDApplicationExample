@@ -13,14 +13,14 @@ import javax.transaction.Transactional;
 
 @Service("userCredentialsService")
 @Transactional
-public class userCredentialsServiceImpl extends UserCredentials {
+public class UserCredentialsServiceImpl extends UserCredentials {
 
     @Autowired
     private UserCredentialsRepository userCredentialsRepository;
 
     public UserCredentials findById(Long id){return userCredentialsRepository.findOne(id);}
 
-    public UserCredentials findByUserName(String userName){return userCredentialsRepository.findByUserName(userName);}
+    public UserCredentials findByUsername(String username){return userCredentialsRepository.findByUsername(username);}
 
     void saveUserCredentials(UserCredentials userCredentials){userCredentialsRepository.save(userCredentials);}
 
@@ -28,6 +28,6 @@ public class userCredentialsServiceImpl extends UserCredentials {
 
     void deleteUserCredentialsById(Long id){userCredentialsRepository.delete(id);}
 
-    boolean isUserCredentialsExist(UserCredentials userCredentials){return findByUserName(userCredentials.getUsername())!=null;}
+    boolean isUserCredentialsExist(UserCredentials userCredentials){return findByUsername(userCredentials.getUsername())!=null;}
 
 }

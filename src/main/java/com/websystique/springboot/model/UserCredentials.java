@@ -3,13 +3,14 @@ package com.websystique.springboot.model;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Created by mihai.huminiuc on 1/18/2017.
  */
 @Entity
 @Table(name="APP_USER_CREDENTIAL")
-public class UserCredentials {
+public class UserCredentials  implements Serializable {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)

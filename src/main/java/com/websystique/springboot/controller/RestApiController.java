@@ -2,6 +2,8 @@ package com.websystique.springboot.controller;
 
 import java.util.List;
 
+import com.websystique.springboot.model.UserCredentials;
+import com.websystique.springboot.service.userCredentials.UserCredentialsService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +28,7 @@ public class RestApiController {
 
     @Autowired
     UserService userService; //Service which will do all data retrieval/manipulation work
+    UserCredentialsService userCredentialsService; //Service which will do all data retrieval/manipulation work
 
     // -------------------Retrieve All Users---------------------------------------------
 
@@ -118,6 +121,27 @@ public class RestApiController {
 
         userService.deleteAllUsers();
         return new ResponseEntity<User>(HttpStatus.NO_CONTENT);
+    }
+
+
+
+    //------------------- Create UserCredentials ---------------------
+
+
+
+    @RequestMapping(value="/login/",method=RequestMethod.POST)
+    public ResponseEntity createUserCredentials(@RequestBody UserCredentials userCredentials, UriComponentsBuilder ucBuilder){
+        logger.info("Creating UserCredentials : {} ", userCredentials);
+
+        if(userCredentialsService.isUserCredentialsExist(userCredentials)){
+            logger.error("Unable to create. A UserCredentials with username {} already exist", userCredentials.getUsername());
+        }
+
+        userCredentialsService.saveUserCredentials(userCredentials);
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setLocation(ucBuilder.path("/api/usercredentials/{id}").buildAndExpand(userCredentials.getId()).toUri());
+        return new ResponseEntity<String>(headers,HttpStatus.CREATED);
     }
 
 }
