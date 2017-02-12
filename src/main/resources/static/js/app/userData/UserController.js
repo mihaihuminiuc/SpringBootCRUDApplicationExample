@@ -1,10 +1,7 @@
-/**
- * Created by mihai.huminiuc on 2/10/2017.
- */
 
 'use strict';
 
-angular.module('crudApp').controller('UserServiceController',
+angular.module('crudApp').controller('UserController',
     ['UserService', '$scope',  function( UserService, $scope) {
 
         var self = this;

@@ -13,7 +13,8 @@ app.constant('urls', {
     //for local usage
 
     BASE: 'http://localhost:8080/SpringBootCRUDApp',
-    USER_SERVICE_API : 'http://localhost:8080/SpringBootCRUDApp/api/user/'
+    USER_SERVICE_API : 'http://localhost:8080/SpringBootCRUDApp/api/user/',
+    USER_REGISTRATIONS_SERVICE_API: 'http://localhost:8080/SpringBootCRUDApp/api/userCredentials/'
 
 });
 
@@ -34,6 +35,15 @@ app.config(['$stateProvider', '$urlRouterProvider',
                         return deferred.promise;
                     }
                 }
+            });
+
+
+        $stateProvider
+            .state('login', {
+                url: '/firstpage',
+                templateUrl: 'templates/login_register',
+                controller:'UserCredentialsController',
+                controllerAs:'ctrl'
             });
 
         $urlRouterProvider.otherwise('/');
