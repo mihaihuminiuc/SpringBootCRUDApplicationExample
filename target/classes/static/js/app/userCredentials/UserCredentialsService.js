@@ -58,7 +58,6 @@ angular.module('crudApp').factory('UserCredentialsService',
                 $http.put(urls.USER_REGISTRATIONS_SERVICE_API + id, user)
                     .then(
                     function (response) {
-                        loadAllUsers();
                         deferred.resolve(response.data);
                     },
                     function (errResponse) {
@@ -75,7 +74,6 @@ angular.module('crudApp').factory('UserCredentialsService',
                 $http.delete(urls.USER_REGISTRATIONS_SERVICE_API + id)
                     .then(
                     function (response) {
-                        loadAllUsers();
                         deferred.resolve(response.data);
                     },
                     function (errResponse) {
